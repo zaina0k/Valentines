@@ -11,7 +11,21 @@
     <button class="answerButton" onclick="location.href='thankyou.html'">
       Yes
     </button>
-    <button class="answerButton" id="noButton">I no no wanna</button>
+    <button class="answerButton" id="noButton">No</button>
+    <script>
+      const noButton = document.getElementById("noButton");
+      const textOptions = ["Are you sure", "What if I asked really nicely?", "Please?", "Pretty Please??", "Please with a cherry on top?", "PLEASE!!", "But :*(", "I am going to die", "Yep I'm dead", "You're talking to my ghost", ":((((("];
+      let currentIndex = 0;
+
+      noButton.addEventListener("click", function () {
+      currentIndex = (currentIndex + 1) % textOptions.length;
+      noButton.textContent = textOptions[currentIndex];
+
+      var yesButton = document.querySelector('button[onclick*="thankyou.html"]');
+      var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+      yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 10px
+      });
+    </script>
     <br />
     <img src="cat.gif" alt="cat asking question" class="responsive" />
 
