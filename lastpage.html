@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="css/flower.css" />
   </head>
   <body>
+    <!-- Add audio element -->
+    <audio id="backgroundMusic" src="song.mp3" preload="auto"></audio>
+
+    <!-- Add script to play audio -->
+    <script>
+      window.addEventListener('load', function() {
+        const audio = document.getElementById('backgroundMusic');
+        audio.play().catch(function(error) {
+          console.log("Audio playback failed:", error);
+        });
+      });
+    </script>
     <div id="thankyou"><b>Some flowers for you :p <br>See you soon</b></div>
     <div class="flower">
       <div class="f-wrapper">
